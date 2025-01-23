@@ -1,0 +1,228 @@
+﻿@{
+    ViewData["Title"] = "Gerar Dieta";
+}
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav" style="background-color: #001000;">
+    <div class="container px-5">
+        <a class="navbar-brand fw-bold" style="color: #ffffff;">🥗 NutriPro</a>
+    </div>
+</nav>
+
+<div class="container mt-5" style="padding-top: 80px;">
+    <h2 style="font-weight: 700;" class="display-4 lh-2 mb-4">Gerar Dieta Personalizada Completa!</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <form id="dietForm">
+                <!-- Caixa de texto para o prompt -->
+                <div class="mb-3">
+                    <label for="prompt" style="font-weight: 600;" class="form-label">Descrição:</label>
+                    <textarea id="prompt"
+                              name="prompt"
+                              class="form-control custom-textarea"
+                              rows="6"
+                              placeholder="Digite aqui sua dieta, Ex. Crie uma dieta para ganhar 10kg comendo banana, pão, frango e arroz. Tenho 25 anos, peso 65kg, altura 1,75m. Evite incluir ovos e iogurte. Prefiro café preto e alimentos simples."
+                              required></textarea>
+                </div>
+
+                <!-- Botão de submissão -->
+                <div class="mb-3 text-center">
+                    <button type="submit" class="btn btn-success custom-button" id="generateButton">Gerar Dieta</button>
+                </div>
+
+                <!-- Caixa de texto para exibir a resposta -->
+                <div class="mb-3">
+                    <label for="response" style="font-weight: 600;" class="form-label">Resposta:</label>
+                    <textarea id="response"
+                              class="form-control custom-textarea"
+                              rows="8"
+                              placeholder="A dieta gerada aparecerá aqui."
+                              disabled></textarea>
+                </div>
+
+                <!-- Mensagem adicional -->
+                <div id="generate-again-message" class="text-center mt-3" style="display: none; color: #00ff00;">
+                    Não gostou da sua dieta? Você pode alterar a descrição e gerar novamente!
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Previne recarregamento ou fechamento da aba com uma mensagem de confirmação
+    window.addEventListener("beforeunload", function (event) {
+        event.preventDefault();
+        event.returnValue = ""; // Exibe a mensagem padrão de confirmação
+    });
+
+    // Previne o recarregamento com teclas específicas (F5, Ctrl+R)
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "F5" || (event.ctrlKey && event.key === "r")) {
+            event.preventDefault(); // Bloqueia o recarregamento
+            alert("Recarregar a página não é permitido!");
+        }
+    });
+
+    // Código do formulário
+    document.getElementById("dietForm").addEventListener("submit", async (event) => {
+        event.preventDefault(); // Impede o comportamento padrão do formulário
+
+        const promptBox = document.getElementById("prompt");
+        const responseBox = document.getElementById("response");
+        const submitButton = document.getElementById("generateButton");
+        const generateAgainMessage = document.getElementById("generate-again-message");
+
+        // Desativa o botão e o campo de texto do prompt durante a requisição
+        submitButton.disabled = true;
+        promptBox.disabled = true;
+
+        // Exibe mensagem de carregamento
+        responseBox.value = "Criando sua dieta...";
+        let dots = 0;
+        const interval = setInterval(() => {
+            dots = (dots + 1) % 4;
+            responseBox.value = "Criando sua dieta" + ".".repeat(dots);
+        }, 500);
+
+        const prompt = promptBox.value.trim();
+
+        if (!prompt) {
+            clearInterval(interval);
+            responseBox.value = "Erro: A descrição não pode estar vazia.";
+            submitButton.disabled = false;
+            promptBox.disabled = false;
+            return;
+        }
+
+        try {
+            const response = await fetch("/Chat/GenerateDiet", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ prompt })
+            });
+
+            const data = await response.json();
+            clearInterval(interval);
+            if (data.success) {
+                let fullText = ""; // Armazena o texto completo
+                let index = 0; // Índice do caractere
+
+                // Efeito de digitação
+                const typingEffect = setInterval(() => {
+                    if (index < data.diet.length) {
+                        fullText += data.diet.charAt(index); // Adiciona caractere por caractere
+                        responseBox.value = fullText;
+                        index++;
+                    } else {
+                        clearInterval(typingEffect); // Para o intervalo ao final do texto
+                        generateAgainMessage.style.display = "block"; // Exibe a mensagem para gerar novamente
+                    }
+                }, 20); // Tempo entre caracteres (50ms)
+            } else {
+                responseBox.value = `Erro: ${data.error}`;
+            }
+        } catch (error) {
+            clearInterval(interval);
+            responseBox.value = "Erro ao processar a solicitação. Tente novamente.";
+            console.error(error);
+        } finally {
+            // Reativa o botão e o campo de texto do prompt
+            submitButton.disabled = false;
+            promptBox.disabled = false;
+        }
+    });
+</script>
+
+
+<style>
+    .navbar-brand {
+        font-size: 1.5rem; /* Ajusta o tamanho do texto do logo */
+        padding: 0; /* Remove espaçamento extra */
+    }
+
+    .custom-button {
+        background-color: #3b8b3b; /* Verde mais escuro */
+        color: #ffffff; /* Cor do texto */
+        border: none;
+        padding: 15px 35px; /* Ajuste do tamanho do botão */
+        font-size: 1.2rem; /* Tamanho do texto */
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        border-radius: 30px; /* Bordas arredondadas */
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Animação para hover */
+        border: 1px solid #2e6f2e; /* Borda verde mais escura */
+        box-shadow: 0 0 5px #3b8b3b; /* Leve glow */
+    }
+
+        .custom-button:hover {
+            background-color: #2e6f2e; /* Verde ainda mais escuro no hover */
+            box-shadow: 0 0 10px #2e6f2e; /* Glow moderado no hover */
+        }
+
+
+    .glow-text {
+        color: #00ff99; /* Verde claro */
+        text-shadow: 0 0 1px #00ff99, 0 0 5px #00ff99, 0 0 3px #00ff99; /* Glow mais sutil */
+        font-weight: bold; /* Destacar o texto */
+    }
+
+    body {
+        background-color: #001000;
+        color: #ffffff;
+        font-family: 'Poppins', sans-serif; /* Aplica a fonte Poppins */
+        margin: 0;
+        padding: 20px;
+    }
+
+    h2 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 3.5rem;
+        background: linear-gradient(to top, #1a9e12, #66ff7f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .custom-textarea {
+        background-color: #001000; /* Fundo igual ao background principal */
+        color: #ffffff; /* Texto branco */
+        border: 2px solid #99ff99; /* Borda verde claro */
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 1rem;
+        font-family: 'Poppins', sans-serif; /* Aplica a fonte Poppins */
+        resize: none; /* Remove o redimensionamento da área de texto */
+    }
+
+        .custom-textarea:focus {
+            background-color: #001000; /* Mantém a cor do fundo ao focar */
+            color: #ffffff; /* Mantém a cor do texto ao focar */
+            border-color: #99ff99; /* Borda verde claro */
+            outline: none; /* Remove o outline padrão */
+            box-shadow: 0 0 5px #99ff99; /* Adiciona um brilho leve na borda */
+        }
+
+        .custom-textarea[disabled] {
+            background-color: #001000; /* Fundo igual ao background principal */
+            color: #ffffff !important; /* Texto branco mesmo quando desativado */
+            border-color: #66cc66; /* Borda mais clara para caixas desativadas */
+            cursor: not-allowed; /* Cursor indicando que está desativado */
+        }
+
+    button {
+        padding: 10px 20px;
+        background-color: #00ff00;
+        border: none;
+        color: #001000;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 8px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+        button:hover {
+            background-color: #008000;
+        }
+</style>

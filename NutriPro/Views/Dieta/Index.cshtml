@@ -1,0 +1,543 @@
+﻿@{
+    ViewData["Title"] = "Sua Dieta";
+}
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav" style="background-color: #001000;">
+    <div class="container px-5">
+        <a class="navbar-brand fw-bold" style="color: #ffffff;">🥗 NutriPro</a>
+    </div>
+</nav>
+
+<div class="container mt-5" style="padding-top: 80px;">
+    <h2 style="font-weight: 700;" class="display-4 lh-2 mb-4">Monte Sua Dieta Ideal em Segundos!</h2>
+
+    <h5 class="display-4 lh-1" style="font-size: 1rem;">Você está a apenas 1 passo de <span style=" font-weight: 600; color: #66ff7f;">transformar sua alimentação!</span> Preencha os detalhes abaixo e descubra a <span style=" font-weight: 600; color: #66ff7f;">dieta perfeita para você.</span></h5>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form id="dietForm">
+                <!-- Caixa de texto para o prompt -->
+                <div class="mb-3">
+                    <label for="prompt" style=" font-weight: 600;" class="form-label">Descrição:</label>
+                    <textarea id="prompt"
+                              name="prompt"
+                              class="form-control custom-textarea"
+                              rows="6"
+                              placeholder="Descreva sua dieta! Ex: Crie uma dieta ganhar 10kg comendo banana, pão, frango e arroz. Tenho 25 anos, peso 65kg e prefiro alimentos simples como café preto."
+                              required></textarea>
+                </div>
+
+                <!-- Botão de submissão -->
+                <div class="mb-3 text-center">
+                    <button type="submit" class="btn btn-success custom-button" id="generateButton">Crie Minha Dieta Agora!</button>
+                </div>
+
+                <!-- Caixa de texto para exibir a resposta -->
+                <div class="mb-3">
+                    <label for="response" style=" font-weight: 600;" class="form-label">Resposta:</label>
+                    <textarea id="response"
+                              class="form-control custom-textarea"
+                              rows="8"
+                              placeholder="Sua dieta personalizada aparecerá aqui em segundos."
+                              disabled></textarea>
+                </div>
+
+                <!-- Frase para "Adquira sua dieta completa!" -->
+                <div id="complete-diet-message" class="text-center acquire-text" style="display: none;">
+                    Garanta agora sua dieta completa!
+                </div>
+
+                <!-- Botão para checkout -->
+                <div id="checkout-button-container" class="text-center mt-3" style="display: none;">
+                    <button type="button" class="custom-button-pay" onclick="window.location.href='';">
+                        Comprar Dieta Completa
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br></br>
+<!-- Linha divisória -->
+<hr class="section-divider">
+
+<footer class="py-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start">
+        <!-- Seção Esquerda -->
+        <div class="footer-left mb-3 mb-md-0">
+            <h6 style="color: #b0b0b0; font-family: 'Poppins', sans-serif; font-size: 1.2rem;">🥗 NutriPro</h6>
+            <p class="small" style=" font-weight: 600; color: #8c8c8c; font-family: 'Poppins', sans-serif; font-size: 0.85rem;">Crie sua dieta personalizada na hora!</p>
+            <p class="small" style="color: #8c8c8c; font-family: 'Poppins', sans-serif; font-size: 0.85rem;">&copy; 2024 NutriPro. Todos os direitos reservados.</p>
+            <p style=" font-weight: 600;" class="small bordered-text">Desenvolvido por Eric DEV</p>
+
+            <!-- Ícones Redes Sociais -->
+            <div class="social-icons d-flex">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/nutriprosite/" target="_blank" class="icon-circle instagram d-flex align-items-center justify-content-center me-2">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/nutriprosite/" target="_blank" class="icon-circle facebook d-flex align-items-center justify-content-center">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Seção Direita -->
+        <div class="footer-right">
+            <h6 style="color: #b0b0b0; font-family: 'Poppins', sans-serif; font-size: 0.95rem;">LEGAL</h6>
+            <ul class="list-unstyled">
+                <li><a href="/termos-de-uso" class="text-decoration-none" style="color: #8c8c8c; font-family: 'Poppins', sans-serif; font-size: 0.85rem;">Termos de Uso</a></li>
+                <li><a href="/termos-de-privacidade" class="text-decoration-none" style="color: #8c8c8c; font-family: 'Poppins', sans-serif; font-size: 0.85rem;">Termos de Privacidade</a></li>
+                <li>
+                    <span style="color: #8c8c8c; font-family: 'Poppins', sans-serif; font-size: 0.85rem;">
+                        CNPJ: 58.451.516/0001-32
+                    </span>
+                </li>
+            </ul>
+            <!-- Imagem de Pagamento Seguro -->
+            <div class="payment-image mt-2">
+                <img src="/assets/img/pagamento-seguro.webp" alt="Pagamento Seguro" style="width: 400px; max-width: 100%; height: auto;" width="400" height="200" loading="lazy">
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        margin-top: 40px;
+    }
+
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    #checkout-button-container {
+        margin-top: 30px;
+    }
+
+
+    #acquire-text {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+
+    .form-control, .btn, #response {
+        margin-bottom: 20px;
+    }
+
+    footer h5, footer h6 {
+        font-weight: 600;
+    }
+
+    .bordered-text {
+        color: #8c8c8c; /* Texto em cinza */
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.85rem;
+        padding: 6px 10px; /* Ajuste no espaçamento interno */
+        border: 0.5px solid #003300; /* Verde mais escuro e borda fina */
+        border-radius: 6px; /* Bordas ligeiramente arredondadas */
+        display: inline-flex;
+        align-items: center;
+        background-color: transparent;
+    }
+
+    .social-icons .icon-circle {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: #1a1a1a; /* Cor escura padrão */
+        color: #8c8c8c; /* Cor padrão dos ícones */
+        font-size: 1.2rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        text-decoration: none;
+    }
+
+    .social-icons .instagram:hover {
+        background-color: #E1306C; /* Cor Instagram */
+        transform: scale(1.1);
+        text-decoration: none;
+    }
+
+    .social-icons .facebook:hover {
+        background-color: #3b5998; /* Cor Facebook */
+        transform: scale(1.1);
+    }
+
+    .social-icons i {
+        transition: color 0.3s ease;
+    }
+
+    footer h5, footer h6 {
+        font-weight: 600;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+
+    footer ul {
+        padding: 0;
+        list-style-type: none;
+    }
+
+        footer ul li {
+            margin-bottom: 5px;
+        }
+
+            footer ul li a {
+                color: #ccc; /* Cor do texto dos links */
+                transition: color 0.3s;
+            }
+
+                footer ul li a:hover {
+                    color: #fff; /* Destaque nos links ao passar o mouse */
+                }
+
+    .navbar-brand {
+        font-size: 1.5rem; /* Ajusta o tamanho do texto do logo */
+        padding: 0; /* Remove espaçamento extra */
+    }
+
+    #complete-diet-message {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+        background: linear-gradient(to top, #1a9e12, #66ff7f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .custom-button-pay {
+        background-color: #5ed974; /* Verde claro */
+        color: #ffffff; /* Cor do texto */
+        border: none;
+        padding: 15px 30px; /* Ajuste do tamanho do botão */
+        font-size: 1.2rem; /* Tamanho do texto */
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        border-radius: 30px; /* Bordas arredondadas */
+        box-shadow: 0 0 5px #5ed974, 0 0 10px #5ed974; /* Glow mais sutil */
+        cursor: pointer;
+        transition: all 0.3s ease; /* Animação para hover */
+        border: 1px solid #99ff99;
+    }
+
+        .custom-button-pay:hover {
+            background-color: #4cc964; /* Verde levemente mais escuro no hover */
+            box-shadow: 0 0 10px #4cc964, 0 0 15px #4cc964; /* Glow moderado no hover */
+        }
+
+    .custom-button {
+        background-color: #3b8b3b; /* Verde mais escuro */
+        color: #ffffff; /* Cor do texto */
+        border: none;
+        padding: 15px 35px; /* Ajuste do tamanho do botão */
+        font-size: 1.2rem; /* Tamanho do texto */
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        border-radius: 30px; /* Bordas arredondadas */
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Animação para hover */
+        border: 1px solid #2e6f2e; /* Borda verde mais escura */
+        box-shadow: 0 0 5px #3b8b3b; /* Leve glow */
+    }
+
+        .custom-button:hover {
+            background-color: #2e6f2e; /* Verde ainda mais escuro no hover */
+            box-shadow: 0 0 10px #2e6f2e; /* Glow moderado no hover */
+        }
+
+    body {
+        background-color: #001000; /* Fundo do site */
+        color: #ffffff;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h2 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 3.5rem;
+        background: linear-gradient(to top, #1a9e12, #66ff7f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    h5 {
+        margin-bottom: 40px;
+        color: white;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .custom-textarea {
+        background-color: #001000; /* Fundo igual ao fundo do site */
+        color: #ffffff; /* Texto branco */
+        border: 2px solid #99ff99; /* Borda verde claro */
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 1rem;
+        font-family: 'Poppins', sans-serif;
+        resize: none;
+    }
+
+        .custom-textarea:focus {
+            background-color: #001000; /* Mantém a cor ao focar */
+            color: #ffffff; /* Texto branco */
+            border-color: #99ff99; /* Destaca a borda ao focar */
+            outline: none; /* Remove o outline padrão */
+            box-shadow: 0 0 5px #99ff99; /* Adiciona um brilho na borda */
+        }
+
+        .custom-textarea[disabled] {
+            background-color: #001000; /* Fundo igual ao fundo do site */
+            color: #ffffff !important; /* Texto branco mesmo desativado */
+            border-color: #66cc66; /* Borda verde clara */
+            cursor: not-allowed; /* Cursor indicando desativação */
+        }
+
+    .acquire-text {
+        color: #00ff99; /* Verde claro para a mensagem */
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #00ff00;
+        border: none;
+        color: #001000;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 8px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+        button:hover {
+            background-color: #008000;
+        }
+
+    #alert-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 1000; /* Garante que o alerta esteja acima de outros elementos */
+    }
+
+    .alert {
+        background-color: #161623; /* Fundo verde mais claro */
+        color: #ffffff;
+        border-radius: 10px;
+        padding: 20px 25px; /* Ajuste de padding para maior tamanho */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column; /* Alinha os elementos verticalmente */
+        align-items: center;
+        justify-content: center;
+        font-family: 'Poppins', sans-serif; /* Fonte Poppins */
+        font-size: 14px; /* Tamanho maior do texto */
+        font-weight: 500;
+        width: 350px; /* Largura maior */
+        animation: fadeIn 1s, fadeOut 1s 7s;
+        animation-fill-mode: forwards; /* Garante que o fade-out aplique após o fim */
+        opacity: 0; /* Ponto de partida para animação */
+    }
+
+        .alert .verified {
+            display: flex;
+            align-items: center;
+            margin-top: 10px; /* Espaço entre o texto principal e a linha "Verificado" */
+            font-size: 14px;
+            font-weight: 400;
+            color: #8c8c8c; /* Tom mais claro para "Verificado" */
+            justify-content: flex-start; /* Alinha à esquerda */
+        }
+
+            .alert .verified svg {
+                margin-right: 8px; /* Espaço entre o ícone e o texto */
+            }
+</style>
+
+<div id="alert-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;"></div>
+
+<script>
+    document.getElementById("dietForm").addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const promptBox = document.getElementById("prompt");
+        const responseBox = document.getElementById("response");
+        const completeDietMessage = document.getElementById("complete-diet-message");
+        const submitButton = document.getElementById("generateButton");
+        const checkoutButtonContainer = document.getElementById("checkout-button-container");
+
+        // Bloqueia a caixa de descrição e o botão de submissão
+        submitButton.disabled = true;
+        promptBox.disabled = true;
+
+        responseBox.value = "Criando sua dieta";
+        let dots = 0;
+        const interval = setInterval(() => {
+            dots = (dots + 1) % 4;
+            responseBox.value = "Criando sua dieta" + ".".repeat(dots);
+        }, 500);
+
+        const prompt = promptBox.value.trim();
+
+        if (!prompt) {
+            clearInterval(interval);
+            responseBox.value = "Erro: A descrição não pode estar vazia.";
+            submitButton.disabled = false;
+            promptBox.disabled = false;
+            return;
+        }
+
+        try {
+            const response = await fetch("/Dieta/GenerateLimitedDiet", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ prompt })
+            });
+
+            const data = await response.json();
+            clearInterval(interval);
+            if (data.success) {
+                const lines = data.diet.split("\n");
+                const previewLines = [];
+                let maxLines = 10; // Número máximo de linhas no preview
+                let currentCharIndex = 0;
+                let currentLine = 0;
+                let fullPreview = ""; // Texto acumulado do preview
+
+                responseBox.value = ""; // Limpa o texto
+
+                const typingEffect = setInterval(() => {
+                    if (currentLine < maxLines) {
+                        if (currentCharIndex < lines[currentLine].length) {
+                            fullPreview += lines[currentLine][currentCharIndex];
+                            responseBox.value = fullPreview;
+                            currentCharIndex++;
+                        } else {
+                            fullPreview += "\n"; // Adiciona quebra de linha ao fim da linha completa
+                            currentLine++;
+                            currentCharIndex = 0; // Reseta o índice para a próxima linha
+                        }
+                    } else {
+                        clearInterval(typingEffect);
+                        if (lines.length > maxLines) {
+                            responseBox.value += "\n..."; // Adiciona "..." em uma nova linha para indicar conteúdo extra
+                            completeDietMessage.style.display = "block"; // Exibe a mensagem de compra
+                        }
+                        checkoutButtonContainer.style.display = "block"; // Mostra o botão de checkout
+                    }
+                }, 20); // Tempo entre cada caractere (50ms)
+            } else {
+                responseBox.value = `Erro: ${data.error}`;
+            }
+        } catch (error) {
+            clearInterval(interval);
+            responseBox.value = "Erro ao processar a solicitação. Tente novamente.";
+            console.error(error);
+        } finally {
+            // Apenas mantenha o promptBox desativado ou ajuste conforme necessário.
+            promptBox.disabled = true;
+        }
+    });
+
+    // Método para o primeiro alerta
+    function showAlert() {
+        const alertContainer = document.getElementById('alert-container');
+
+        // Gera um número aleatório entre 5 e 10
+        const randomNumber = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
+
+        // Cria o alerta
+        const alert = document.createElement('div');
+        alert.className = 'alert';
+
+        // Cria o texto principal
+        const message = document.createElement('div');
+        message.innerHTML = `<span style="font-weight: 600;">${randomNumber}</span> pessoas estão finalizando a compra neste exato momento!`;
+        alert.appendChild(message);
+
+
+        // Cria a linha de "Verificado"
+        const verified = document.createElement('div');
+        verified.className = 'verified';
+
+        // Adiciona o ícone e o texto "Verificado"
+        verified.innerHTML = `
+                                <span style="font-weight: 600;">NutriPro</span>&nbsp;|&nbsp;<i class="far fa-check-circle"></i> Verificado
+            `;
+        alert.appendChild(verified);
+
+        // Adiciona o alerta ao container
+        alertContainer.appendChild(alert);
+
+        // Remove o alerta após o tempo total
+        setTimeout(() => {
+            alert.remove();
+            setTimeout(showAlternateAlert, 15000); // Espera 15 segundos para mostrar o próximo alerta
+        }, 8000); // 6s de exibição + 1s de fade-out
+    }
+
+    // Método para o segundo alerta
+    function showAlternateAlert() {
+        const alertContainer = document.getElementById('alert-container');
+
+        // Gera um número aleatório entre 5 e 10
+        const randomNumber = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
+
+        // Cria o alerta
+        const alert = document.createElement('div');
+        alert.className = 'alert';
+
+        // Cria o texto principal
+        const message = document.createElement('div');
+        message.innerHTML = `<span style="font-weight: 600;">${randomNumber}</span> pessoas compraram Dieta Personalizada agora mesmo!`;
+        alert.appendChild(message);
+
+
+        // Cria a linha de "Verificado"
+        const verified = document.createElement('div');
+        verified.className = 'verified';
+
+        // Adiciona o ícone e o texto "Verificado"
+        verified.innerHTML = `
+
+                         <span style="font-weight: 600;">NutriPro</span>&nbsp;|&nbsp;<i class="far fa-check-circle"></i> Verificado
+            `;
+        alert.appendChild(verified);
+
+        // Adiciona o alerta ao container
+        alertContainer.appendChild(alert);
+
+        // Remove o alerta após o tempo total
+        setTimeout(() => {
+            alert.remove();
+            setTimeout(showAlert, 15000); // Espera 15 segundos para mostrar o próximo alerta
+        }, 8000); // 6s de exibição + 1s de fade-out
+    }
+
+    // Inicia os alertas após 15 segundos
+    setTimeout(() => {
+        showAlert(); // Mostra o primeiro alerta
+    }, 10000); // Espera inicial de 15 segundos antes do primeiro alerta
+</script>
+
+

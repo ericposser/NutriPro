@@ -1,0 +1,1070 @@
+﻿@{
+    ViewData["Title"] = "Página Inicial";
+}
+
+<body id="page-top">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMW7HXDZ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+
+        <div class="container px-5">
+            <a class="navbar-brand fw-bold" href="#page-top" style="color: #ffffff;">🥗 NutriPro</a>
+        </div>
+
+    </nav>
+    <!-- Mashead header-->
+    <header class="masthead">
+        <link rel="preload" href="/assets/img/dieta.webp" as="image">
+
+        <!-- Google Tag Manager -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-NMW7HXDZ');</script>
+        <!-- End Google Tag Manager -->
+
+
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6">
+                    <!-- Masthead text and app badges-->
+                    <div class="responsive-container mb-5 mb-lg-0 text-center text-lg-start">
+                        <h1 class="display-4 lh-2 mb-4">
+                            Crie sua dieta 100% personalizada na hora!
+                        </h1>
+
+                        <p class="lead fw-normal mb-1">
+                            Crie sua dieta personalizada <span style="color:#66ff7f; font-weight: 600;">em segundos</span>.
+                        </p>
+                         <p class="lead fw-normal mb-1">
+                            Descubra o segredo para o corpo dos seus sonhos <span style="font-weight: 600; color: #66ff7f;">sem perder tempo</span>.
+                        </p>
+                        <p class="lead fw-normal mb-4">
+                            Dieta sob medida, <span style=" font-weight: 600; color: #66ff7f;">criada instantaneamente</span> para você. 🥗
+                        </p>
+                        <div class="text-center md-5">
+                            <button class="custom-button" onclick="window.location.href='@Url.Action("Index", "Dieta")';">Monte agora sua dieta!</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+                    <img src="/assets/img/dieta.webp"
+                         alt="Design Personalizado"
+                         class="glow-image enlarged-image"
+                         style="max-width: 100%; height: auto;"
+                         width="800"
+                         height="600"
+                         loading="eager"
+                         fetchpriority="high">
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Linha divisória -->
+    <hr class="section-divider">
+
+    <section class="text-center py-5" style="background-color: #001000;">
+        <div class="container px-5">
+            <!-- Título maior -->
+            <h2 class="text-white mb-5 title-xl">Como funciona?</h2>
+            <div class="row row-cols-1 row-cols-lg-4 row-cols-md-2 gx-4 gy-5 justify-content-center">
+
+                <!-- Novo Card -->
+                <div class="col">
+                    <div class="card card-gradient h-100">
+                        <div class="card-body text-white text-center p-4">
+                            <div class="mb-3">
+                                <i class="fa fa-pencil" style="color: #66ff7f;"></i>
+                            </div>
+                            <h5 class="card-title text-light" style="font-size: 1.8rem;">1. Descreva sua dieta</h5>
+                            <p class="card-text" style="font-size: 1.1rem;">
+                                Informe como seria sua dieta dos sonhos, perfeita para você.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Original 1 -->
+                <div class="col">
+                    <div class="card card-gradient h-100">
+                        <div class="card-body text-white text-center p-4">
+                            <div class="mb-3">
+                                <i class="fa-regular fa-money-bill-1" style="color: #66ff7f;"></i>
+                            </div>
+                            <h5 class="card-title text-light" style="font-size: 1.8rem;">2. Faça o pagamento</h5>
+                            <p class="card-text" style="font-size: 1.1rem;">
+                                Realize o pagamento e aguarde a aprovação para receber sua dieta completa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Original 2 -->
+                <div class="col">
+                    <div class="card card-gradient h-100">
+                        <div class="card-body text-white text-center p-4">
+                            <div class="mb-3">
+                                <i class="fa-regular fa-file-lines" style="color: #66ff7f;"></i>
+                            </div>
+                            <h5 class="card-title text-light" style="font-size: 1.8rem;">3. Nossa página!</h5>
+                            <p class="card-text" style="font-size: 1.1rem;">
+                                Você será redirecionado(a) diretamente para nossa página para obter sua dieta personalizada!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Original 3 -->
+                <div class="col">
+                    <div class="card card-gradient h-100">
+                        <div class="card-body text-white text-center p-4">
+                            <div class="mb-3">
+                                <i class="fa-regular fa-heart" style="color: #66ff7f;"></i>
+                            </div>
+                            <h5 class="card-title text-light" style="font-size: 1.8rem;">4. Sua dieta na hora!</h5>
+                            <p class="card-text">
+                                <div class="masthead-device-mockup mt-3" style="display: flex; justify-content: center; align-items: center;">
+                                    <video class="responsive-video" autoplay loop muted playsinline style="border-radius: 10px; width: 120%; max-width: 300px;">
+                                        <source src="/assets/img/videogif2.mp4" type="video/mp4">
+                                        Seu navegador não suporta vídeos.
+                                    </video>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Linha divisória -->
+    <hr class="section-divider">
+
+    <section id="pricing" class="py-5" style="background-color: #001000;">
+        <div class="container text-center">
+            <!-- Título Preço -->
+            <h2 class="text-white mb-5 title-xl">Preço:</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <!-- Card de Preço -->
+                    <div class="card card-gradient shadow-lg card-bordered">
+                        <div class="card-body text-center p-4">
+                            <!-- Preço Original Riscado -->
+                            <p class="mb-1" style="font-weight: 700; font-size: 1.2rem; color: #ff3333; margin-bottom: 0.5rem; text-decoration: line-through;">
+                                de R$79,00
+                            </p>
+
+                            <!-- Preço em Parcelas -->
+                            <h3 class="text-white mb-2 card-price">
+                                <small style="font-size: 1rem;" class="text-break">Por apenas 9x de</small>
+                                <span style="font-size: 4.1rem;">R$5,01</span>
+                                <small class="uma-vez" style="font-size: 0.6rem;">/uma vez</small>
+                            </h3>
+                            <!-- Preço à Vista -->
+                            <p class="text-white mb-4" style="font-size: 0.7rem;">
+                                à vista R$39,00
+                            </p>
+                            <!-- Detalhe de Promoção -->
+                            <p style="color: #ff3333; font-size: 1rem; font-family: 'Poppins', sans-serif; font-weight: 700;">
+                                Promoção encerra em breve!
+                            </p>
+                            <!-- Checklist -->
+                            <ul class="text-white text-start mb-4" style="list-style: none; padding-left: 0; font-size: 0.9rem;">
+                                <li style="display: flex; align-items: center; margin-bottom: 0.3rem;">
+                                    <i class="fas fa-check" style="color: #00ff00; font-size: 0.9rem; margin-right: 0.5rem;"></i>
+                                    Gerar quantas dietas quiser.
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.3rem;">
+                                    <i class="fas fa-check" style="color: #00ff00; font-size: 0.9rem; margin-right: 0.5rem;"></i>
+                                    Dietas de diferentes objetivos.
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.3rem;">
+                                    <i class="fas fa-check" style="color: #00ff00; font-size: 0.9rem; margin-right: 0.5rem;"></i>
+                                    Tudo instantâneo.
+                                </li>
+                            </ul>
+                            <!-- Botão Centralizado -->
+                            <div class="text-center md-5">
+                                <button class="custom-button" onclick="window.location.href='@Url.Action("Index", "Dieta")';">Monte agora sua dieta!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Linha divisória -->
+    <hr class="section-divider">
+
+
+
+    <section id="testimonials" class="py-5" style="background-color: #001000;">
+        <div class="container text-center">
+            <h2 class="text-white mb-5 title-xl">Depoimentos:</h2>
+            <h5 class="text-white mb-5">
+                Milhares já transformaram suas vidas com o <span style="color: #66ff7f;">NutriPro</span>!
+            </h5>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- Card 1 --> 
+                    <div class="carousel-card">
+                        <div class="card card-gradient shadow-lg border-card">
+                            <div class="card-body text-white text-center p-4">
+                                <p class="card-text">
+                                    "Mano, o NutriPro é incrível! Montou minha dieta rapidinho e super fácil de seguir!"
+                                </p>
+                                <h5 style=" font-weight: 600;" class="card-title mt-3">- João Silva <i id="verificadodepo" class="far fa-check-circle"></i></span></h5>
+                                <small class="text-muted">2 semanas atrás</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="carousel-card">
+                        <div class="card card-gradient shadow-lg border-card">
+                            <div class="card-body text-white text-center p-4">
+                                <p class="card-text">
+                                    "Nunca foi tão simples organizar o que comer. Top demais, recomendo pra geral!"
+                                </p>
+                                <h5 style=" font-weight: 600;" class="card-title mt-3">- Maria Oliveira <i id="verificadodepo" class="far fa-check-circle"></i></h5>
+                                <small class="text-muted">1 mês atrás</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="carousel-card">
+                        <div class="card card-gradient shadow-lg border-card">
+                            <div class="card-body text-white text-center p-4">
+                                <p class="card-text">
+                                    "Eu só queria uma dieta sem dor de cabeça, e o NutriPro entregou tudo! Perfeito pra quem é preguiçoso que nem eu!"
+                                </p>
+                                <h5 style=" font-weight: 600;" class="card-title mt-3">- Pedro Santos <i id="verificadodepo" class="far fa-check-circle"></i></h5>
+                                <small class="text-muted">3 semanas atrás</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="carousel-card">
+                        <div class="card card-gradient shadow-lg border-card">
+                            <div class="card-body text-white text-center p-4">
+                                <p class="card-text">
+                                    "NutriPro salvou meu rolê! Agora sei exatamente o que comer e ainda sobra tempo pra curtir a vida."
+                                </p>
+                                <h5 style=" font-weight: 600;" class="card-title mt-3">- Lucas Almeida <i id="verificadodepo" class="far fa-check-circle"></i></h5>
+                                <small class="text-muted">2 dias atrás</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="carousel-card">
+                        <div class="card card-gradient shadow-lg border-card">
+                            <div class="card-body text-white text-center p-4">
+                                <p class="card-text">
+                                    "Sempre odiei planejar refeições, mas com o NutriPro é só clicar e tá pronto. Amo demais!"
+                                </p>
+                                <h5 style=" font-weight: 600;" class="card-title mt-3">- Mariana Costa <i id="verificadodepo" class="far fa-check-circle"></i></h5>
+                                <small class="text-muted">11 mêses atrás</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="carousel-card">
+                        <div class="card card-gradient shadow-lg border-card">
+                            <div class="card-body text-white text-center p-4">
+                                <p class="card-text">
+                                    "Cara, minha dieta tá redondinha e sem complicação nenhuma. NutriPro virou meu aliado diário!"
+                                </p>
+                                <h5 style=" font-weight: 600;" class="card-title mt-3">- Rafael Nogueira <i id="verificadodepo" class="far fa-check-circle"></i></h5>
+                                <small class="text-muted">5 mêses atrás</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 -->
+                    <div class="carousel-card">
+                        <div class="card card-gradient shadow-lg border-card">
+                            <div class="card-body text-white text-center p-4">
+                                <p class="card-text">
+                                    "Pensa numa solução prática. O NutriPro resolve tudo pra mim em minutos, coisa de outro mundo!"
+                                </p>
+                                <h5 style=" font-weight: 600;" class="card-title mt-3">- Júlia Mendes <i id="verificadodepo" class="far fa-check-circle"></i></h5>
+                                <small class="text-muted">9 mêses atrás</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 8 -->
+                    <div class="carousel-card">
+                        <div class="card card-gradient shadow-lg border-card">
+                            <div class="card-body text-white text-center p-4">
+                                <p class="card-text">
+                                    "Nunca pensei que seguir uma dieta seria tão de boa. NutriPro tá sendo meu melhor investimento."
+                                </p>
+                                <h5 style=" font-weight: 600;" class="card-title mt-3">- Felipe Rocha <i id="verificadodepo" class="far fa-check-circle"></i></h5>
+                                <small class="text-muted">1 ano atrás</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 9 -->
+                    <div class="carousel-card">
+                        <div class="card card-gradient shadow-lg border-card">
+                            <div class="card-body text-white text-center p-4">
+                                <p class="card-text">
+                                    "Eu achava que comer bem era caro e complicado, mas o NutriPro tá me provando o contrário todo dia!"
+                                </p>
+                                <h5 style=" font-weight: 600;" class="card-title mt-3">- Ana Clara <i id="verificadodepo" class="far fa-check-circle"></i></h5>
+                                <small class="text-muted">2 mêses atrás</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 10 -->
+                    <div class="carousel-card">
+                        <div class="card card-gradient shadow-lg border-card">
+                            <div class="card-body text-white text-center p-4">
+                                <p class="card-text">
+                                    "Se eu soubesse que era tão simples montar uma dieta com o NutriPro, teria começado antes!"
+                                </p>
+                                <h5 style=" font-weight: 600;" class="card-title mt-3">- Thiago Fernandes <i id="verificadodepo" class="far fa-check-circle"></i></h5>
+                                <small class="text-muted">10 mêses atrás</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Linha divisória -->
+    <hr class="section-divider">
+
+    <section id="faq" class="py-4" style="background-color: #001000;">
+    <div class="container">
+        <!-- Título da seção -->
+        <h2 class="text-white text-center mb-5 title-xl">Perguntas Frequentes:</h2>
+
+        <div class="accordion" id="faqAccordion">
+            <!-- Pergunta 1 -->
+            <div class="accordion-item mb-3" style="background-color: #001000;">
+                <h2 class="accordion-header" id="heading1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                        O que é a NutriPro?
+                    </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body text-light">
+                        NutriPro é uma plataforma inteligente que utiliza tecnologia para criar dietas 100% personalizadas. Com ela, você pode obter planos alimentares adaptados às suas necessidades, objetivos e preferências em questão de segundos. É ideal para quem busca praticidade, eficiência e resultados sem complicações.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pergunta 2 -->
+            <div class="accordion-item mb-3" style="background-color: #001000;">
+                <h2 class="accordion-header" id="heading2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                        Quais são as formas de pagamento? Tem como parcelar?
+                    </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body text-light">
+                        Aceitamos diversas formas de pagamento, incluindo cartão de créditoe Pix. Sim, é possível parcelar sua compra em até 10 vezes no cartão.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pergunta 3 -->
+            <div class="accordion-item mb-3" style="background-color: #001000;">
+                <h2 class="accordion-header" id="heading3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                        Quanto tempo demora para receber a dieta?
+                    </button>
+                </h2>
+                <div id="faq3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body text-light">
+                        Assim que você preenche suas informações e confirma o envio, a NutriPro utiliza sua inteligência para gerar sua dieta instantaneamente. Em poucos segundos, você terá acesso ao seu plano alimentar personalizado!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pergunta 4 -->
+            <div class="accordion-item mb-3" style="background-color: #001000;">
+                <h2 class="accordion-header" id="heading4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                        O pagamento é seguro?
+                    </button>
+                </h2>
+                <div id="faq4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body text-light">
+                        Sim, nós usamos a plataforma de pagamento da Kiwify 100% segura.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pergunta 5 -->
+            <div class="accordion-item mb-3" style="background-color: #001000;">
+                <h2 class="accordion-header" id="heading5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                        Posso editar minha dieta depois de criá-la?
+                    </button>
+                </h2>
+                <div id="faq5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body text-light">
+                        Sim! Depois de criar sua dieta, você pode editá-la a qualquer momento. Basta ajustar as informações conforme suas preferências ou novas necessidades. É simples e rápido!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pergunta 6 -->
+            <div class="accordion-item mb-3" style="background-color: #001000;">
+                <h2 class="accordion-header" id="heading6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+                        Como posso entrar em contato com o suporte ao cliente?
+                    </button>
+                </h2>
+                <div id="faq6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body text-light">
+                        Você pode entrar em contato pelo nosso e-mail de suporte suporte@nutriprosite.com.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Linha divisória -->
+    <hr class="section-divider">
+    <br></br>
+
+    <section class="custom-card-section py-5">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <!-- Imagem -->
+                <div class="col-lg-3">
+                    <img src="/assets/img/fit.svg"
+                         alt="Design Personalizado"
+                         style="max-width: 100%; height: auto;"
+                         width="300"
+                         height="200"
+                         loading="eager"
+                         fetchpriority="high">
+                </div>
+                <!-- Texto -->
+                <div class="col-lg-9">
+                    <h2 class="text-white text-start">
+                        Bora mudar sua alimentação de um jeito fácil!
+                    </h2>
+                    <p class="lead text-light text-start">
+                        <span style="font-weight: 600; color: #66ff7f;">Chega de desculpas!</span> A melhor versão de você começa com um clique. Invista em sua saúde agora mesmo!
+                    </p>
+                </div>
+            </div>
+            <!-- Botão -->
+            <div class="text-center mt-4">
+                <button class="custom-button" style="width: auto; padding: 10px 20px;" onclick="window.location.href='@Url.Action("Index", "Dieta")';">Monte agora sua dieta!</button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <br></br>
+    <!-- Linha divisória -->
+    <hr class="section-divider">
+
+    <footer class="py-5">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start">
+            <!-- Seção Esquerda -->
+            <div class="footer-left mb-3 mb-md-0">
+                <h6 style="color: #b0b0b0; font-family: 'Poppins', sans-serif; font-size: 1.2rem;">🥗 NutriPro</h6>
+                <p class="small" style=" font-weight: 600; color: #8c8c8c; font-family: 'Poppins', sans-serif; font-size: 0.85rem;">Crie sua dieta personalizada na hora!</p>
+                <p class="small" style="color: #8c8c8c; font-family: 'Poppins', sans-serif; font-size: 0.85rem;">&copy; 2024 NutriPro. Todos os direitos reservados.</p>
+                <p style=" font-weight: 600;" class="small bordered-text">Desenvolvido por Eric DEV</p>
+
+                <!-- Ícones Redes Sociais -->
+                <div class="social-icons d-flex">
+                    <!-- Instagram -->
+                    <a href="" target="_blank" class="icon-circle instagram d-flex align-items-center justify-content-center me-2">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- Facebook -->
+                    <a href="" target="_blank" class="icon-circle facebook d-flex align-items-center justify-content-center">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Seção Direita -->
+            <div class="footer-right">
+                <h6 style="color: #b0b0b0; font-family: 'Poppins', sans-serif; font-size: 0.95rem;">LEGAL</h6>
+                <ul class="list-unstyled">
+                    <li><a href="/termos-de-uso" class="text-decoration-none" style="color: #8c8c8c; font-family: 'Poppins', sans-serif; font-size: 0.85rem;">Termos de Uso</a></li>
+                    <li><a href="/termos-de-privacidade" class="text-decoration-none" style="color: #8c8c8c; font-family: 'Poppins', sans-serif; font-size: 0.85rem;">Termos de Privacidade</a></li>
+                    <li>
+                        <span style="color: #8c8c8c; font-family: 'Poppins', sans-serif; font-size: 0.85rem;">
+                            CNPJ:
+                        </span>
+                    </li>
+                </ul>
+                <!-- Imagem de Pagamento Seguro -->
+                <div class="payment-image mt-2">
+                    <img src="/assets/img/pagamento-seguro.webp" alt="Pagamento Seguro" style="width: 400px; max-width: 100%; height: auto;" width="400" height="200" loading="lazy">
+                </div>  
+            </div>
+        </div>
+    </footer>
+
+    <div id="alert-container"></div>
+
+
+
+
+</body>
+
+<style>
+    #verificadodepo{
+        color: #b0b0b0; /* Cor cinza similar ao exemplo */
+        font-size: 1rem; /* Um pouco menor que o texto padrão */
+        margin-left: 0.2rem;
+    }
+
+    .text-muted {
+        color: #b0b0b0; /* Cor cinza similar ao exemplo */
+        font-size: 0.9rem; /* Um pouco menor que o texto padrão */
+        display: block;
+        margin-top: 0.5rem; /* Espaço entre o nome e a data */
+    }
+
+
+    #alert-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 1000; /* Garante que o alerta esteja acima de outros elementos */
+    }
+
+    .alert {
+        background-color: #161623; /* Fundo verde mais claro */
+        color: #ffffff;
+        border-radius: 10px;
+        padding: 20px 25px; /* Ajuste de padding para maior tamanho */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column; /* Alinha os elementos verticalmente */
+        align-items: center;
+        justify-content: center;
+        font-family: 'Poppins', sans-serif; /* Fonte Poppins */
+        font-size: 14px; /* Tamanho maior do texto */
+        font-weight: 500;
+        width: 350px; /* Largura maior */
+        animation: fadeIn 1s, fadeOut 1s 7s;
+        animation-fill-mode: forwards; /* Garante que o fade-out aplique após o fim */
+        opacity: 0; /* Ponto de partida para animação */
+    }
+
+        .alert .verified {
+            display: flex;
+            align-items: center;
+            margin-top: 10px; /* Espaço entre o texto principal e a linha "Verificado" */
+            font-size: 14px;
+            font-weight: 400;
+            color: #8c8c8c; /* Tom mais claro para "Verificado" */
+            justify-content: flex-start; /* Alinha à esquerda */
+        }
+
+            .alert .verified svg {
+                margin-right: 8px; /* Espaço entre o ícone e o texto */
+            }
+
+
+
+    .social-icons .icon-circle {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: #1a1a1a; /* Cor escura padrão */
+        color: #8c8c8c; /* Cor padrão dos ícones */
+        font-size: 1.2rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        text-decoration: none;
+    }
+
+    .social-icons .instagram:hover {
+        background-color: #E1306C; /* Cor Instagram */
+        transform: scale(1.1);
+        text-decoration: none;
+    }
+
+    .social-icons .facebook:hover {
+        background-color: #3b5998; /* Cor Facebook */
+        transform: scale(1.1);
+    }
+
+    .social-icons i {
+        transition: color 0.3s ease;
+    }
+
+
+    .custom-card-section {
+    background-color: #001000; /* Fundo escuro */
+    border-radius: 12px; /* Bordas arredondadas */
+    border: 1px solid #99ff99; /* Linha leve ao redor do card */
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra suave */
+    max-width: 1200px; /* Limita o tamanho do card */
+    margin: 0 auto; /* Centraliza o card na página */
+}
+
+.custom-card-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem; /* Tamanho ajustado */
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.custom-card-section p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #b3b3b3; /* Cor do texto */
+    margin-bottom: 20px;
+}
+
+    .bordered-text {
+        color: #8c8c8c; /* Texto em cinza */
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.85rem;
+        padding: 6px 10px; /* Ajuste no espaçamento interno */
+        border: 0.5px solid #003300; /* Verde mais escuro e borda fina */
+        border-radius: 6px; /* Bordas ligeiramente arredondadas */
+        display: inline-flex;
+        align-items: center;
+        background-color: transparent;
+    }
+
+        footer h5, footer h6 {
+            font-weight: 600;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer ul {
+            padding: 0;
+            list-style-type: none;
+        }
+
+            footer ul li {
+                margin-bottom: 5px;
+            }
+
+                footer ul li a {
+                    color: #ccc; /* Cor do texto dos links */
+                    transition: color 0.3s;
+                }
+
+                    footer ul li a:hover {
+                        color: #fff; /* Destaque nos links ao passar o mouse */
+                    }
+
+    /* Título da seção */
+    .title-xl {
+        font-family: 'Poppins', sans-serif;
+        font-size: 3rem;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    /* Estilo do botão da pergunta */
+    .accordion-button {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.2rem;
+        font-weight: bold;
+        background-color: #001000;
+        color: #ffffff;
+        border: none; /* Remove as bordas */
+    }
+
+        /* Estilo do botão ao ser selecionado */
+        .accordion-button:not(.collapsed) {
+            color: #88ff88; /* Verde ainda mais claro */
+            background-color: #001000;
+        }
+
+    /* Corpo do texto da resposta */
+    .accordion-body {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem;
+        color: #ffffff;
+    }
+
+    /* Remove a borda dos itens */
+    .accordion-item {
+        border: none; /* Remove a borda ao redor */
+    }
+
+    /* Estilo para os cards de depoimentos */
+    .card-gradient {
+        background: linear-gradient(to bottom, #001000, #004d00); /* Degradê de cima para baixo */
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra leve */
+    }
+
+    /* Linha verde clara ao redor dos cards */
+    .border-card {
+        border: 1px solid #99ff99;
+        border-radius: 12px; /* Bordas arredondadas */
+    }
+
+    .card-text {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem; /* Texto do depoimento */
+        font-weight: normal;
+    }
+
+    .card-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.2rem; /* Nome do usuário */
+        font-weight: bold;
+    }
+
+    .title-xl {
+        font-family: 'Poppins', sans-serif;
+        font-size: 3rem; /* Tamanho do título principal */
+        font-weight: bold;
+        color: #ffffff; /* Branco */
+    }
+
+    .card-price {
+        font-family: 'Poppins', sans-serif;
+        font-size: 3rem;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    /* Estilo para o card */
+    .card-gradient {
+        background: linear-gradient(to bottom, #001000, #004d00); /* Degradê de cima para baixo */
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra leve */
+    }
+
+    /* Botão de ação */
+    .btn-pink:hover {
+        background-color: #e62e5c; /* Cor de hover para o botão */
+        color: #ffffff;
+    }
+
+    /* Lista estilizada */
+    ul li {
+        font-size: 1.1rem;
+        color: #ffffff;
+    }
+
+        ul li i {
+            margin-right: 8px;
+        }
+
+    /* Título ainda maior */
+    .title-xl {
+        font-family: 'Poppins', sans-serif;
+        font-size: 3rem; /* Tamanho maior para o título */
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    /* Estilo para os cards */
+    .card-gradient {
+        background: linear-gradient(to bottom, #001000, #004d00);
+        border: none;
+        border-radius: 15px; /* Borda arredondada */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra mais forte */
+        border: 1px solid #99ff99;
+    }
+
+    /* Título dos cards maior */
+    .card-title-xl {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2rem; /* Tamanho grande para o título do card */
+        font-weight: bold;
+    }
+
+    /* Texto dos cards maior */
+    .card-text-xl {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.4rem; /* Texto ampliado */
+    }
+
+    /* Espaçamento interno maior nos cards */
+    .card-body {
+        padding: 3rem; /* Aumenta o espaçamento interno */
+    }
+
+        /* Ícones maiores */
+        .card-body i {
+            font-size: 4rem; /* Ícones ampliados */
+        }
+
+    /* Imagem ou GIF dentro do card */
+    .masthead-device-mockup img {
+        width: 120%; /* Aumenta a largura para 110% */
+        height: auto; /* Mantém a proporção da altura */
+        transform: scale(1.2); /* Escala a imagem em 10% */
+        transform-origin: center; /* Mantém a centralização */
+        margin: 0; /* Remove margens extras */
+    }
+
+
+
+    .masthead {
+        position: relative; /* Permite ajustar a posição */
+        top: -80px; /* Move o header para cima */
+        margin-bottom: 65px; /* Adiciona um espaço após o header para compensar */
+        background-color: #001000;
+    }
+
+
+    /* Definir fundo do site */
+    body {
+        background-color: #001000;
+        color: #ffffff; /* Para garantir a legibilidade do texto */
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+    }
+
+    .display-4 {
+        font-weight: bold;
+        font-size: 3.5rem;
+        background: linear-gradient(to top, #1a9e12, #66ff7f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    #mainNav {
+        background-color: #001000;
+    height: 60px; /* Ajusta a altura total */
+    padding: 0.5rem 1rem; /* Ajusta o espaçamento interno */
+    font-size: 0.9rem; /* Reduz o tamanho do texto */
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem; /* Ajusta o tamanho do texto do logo */
+        padding: 0; /* Remove espaçamento extra */
+    }
+
+    .lead.fw-normal.text-muted {
+        color: #ffffff;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .custom-button {
+        background-color: #5ed974; /* Verde claro */
+        color: #ffffff; /* Cor do texto */
+        border: none;
+        padding: 15px 30px; /* Ajuste do tamanho do botão */
+        font-size: 1.2rem; /* Tamanho do texto */
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        border-radius: 30px; /* Bordas arredondadas */
+        box-shadow: 0 0 5px #5ed974, 0 0 10px #5ed974; /* Glow mais sutil */
+        cursor: pointer;
+        transition: all 0.3s ease; /* Animação para hover */
+        border: 1px solid #99ff99;
+    }
+
+        .custom-button:hover {
+            background-color: #4cc964; /* Verde levemente mais escuro no hover */
+            box-shadow: 0 0 10px #4cc964, 0 0 15px #4cc964; /* Glow moderado no hover */
+        }
+
+
+    .navbar-brand, .nav-link {
+        color: #ffffff; /* Cor branca */
+    }
+
+    .glow-image {
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 150%; /* Aumenta o tamanho da largura */
+        height: auto; /* Mantém a proporção da altura */
+        filter: drop-shadow(0 0 30px #66ff7f); /* Glow constante */
+    }
+
+    .enlarged-image {
+        width: 120%; /* Aumenta a largura em 20% */
+        height: auto; /* Mantém a proporção da altura */
+    }
+
+    /* Estilo do overlay */
+    .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo transparente */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        display: none; /* Escondido por padrão */
+    }
+
+    .accordion-button:focus {
+        box-shadow: none; /* Remove o contorno azul */
+        outline: none; /* Remove o estilo de borda padrão */
+    }
+
+    .carousel-container {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .carousel-track {
+        display: flex;
+        gap: 20px;
+        animation: scroll 90s linear infinite; /* Aumente o tempo para desacelerar */
+    }
+
+    .carousel-card {
+        flex: 0 0 300px;
+        max-width: 300px;
+        box-sizing: border-box;
+    }
+
+
+</style>
+
+<script>
+    const track = document.querySelector('.carousel-track');
+    const cards = Array.from(document.querySelectorAll('.carousel-card'));
+
+    // Duplicar os cards para o movimento contínuo
+    cards.forEach((card) => {
+        const clone = card.cloneNode(true);
+        track.appendChild(clone);
+    });
+
+
+
+    // Método para o primeiro alerta
+    function showAlert() {
+        const alertContainer = document.getElementById('alert-container');
+
+        // Gera um número aleatório entre 5 e 10
+        const randomNumber = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
+
+        // Cria o alerta
+        const alert = document.createElement('div');
+        alert.className = 'alert';
+
+        // Cria o texto principal
+        const message = document.createElement('div');
+        message.innerHTML = `<span style="font-weight: 600;">${randomNumber}</span> pessoas estão finalizando a compra neste exato momento!`;
+        alert.appendChild(message);
+
+
+        // Cria a linha de "Verificado"
+        const verified = document.createElement('div');
+        verified.className = 'verified';
+
+        // Adiciona o ícone e o texto "Verificado"
+        verified.innerHTML = `
+                            <span style="font-weight: 600;">NutriPro</span>&nbsp;|&nbsp;<i class="far fa-check-circle"></i> Verificado
+        `;
+        alert.appendChild(verified);
+
+        // Adiciona o alerta ao container
+        alertContainer.appendChild(alert);
+
+        // Remove o alerta após o tempo total
+        setTimeout(() => {
+            alert.remove();
+            setTimeout(showAlternateAlert, 15000); // Espera 15 segundos para mostrar o próximo alerta
+        }, 8000); // 6s de exibição + 1s de fade-out
+    }
+
+    // Método para o segundo alerta
+    function showAlternateAlert() {
+        const alertContainer = document.getElementById('alert-container');
+
+        // Gera um número aleatório entre 5 e 10
+        const randomNumber = Math.floor(Math.random() * (10 - 5 + 1)) + 5;
+
+        // Cria o alerta
+        const alert = document.createElement('div');
+        alert.className = 'alert';
+
+        // Cria o texto principal
+        const message = document.createElement('div');
+        message.innerHTML = `<span style="font-weight: 600;">${randomNumber}</span> pessoas compraram Dieta Personalizada agora mesmo!`;
+        alert.appendChild(message);
+
+
+        // Cria a linha de "Verificado"
+        const verified = document.createElement('div');
+        verified.className = 'verified';
+
+        // Adiciona o ícone e o texto "Verificado"
+        verified.innerHTML = `
+
+                     <span style="font-weight: 600;">NutriPro</span>&nbsp;|&nbsp;<i class="far fa-check-circle"></i> Verificado
+        `;
+        alert.appendChild(verified);
+
+        // Adiciona o alerta ao container
+        alertContainer.appendChild(alert);
+
+        // Remove o alerta após o tempo total
+        setTimeout(() => {
+            alert.remove();
+            setTimeout(showAlert, 15000); // Espera 15 segundos para mostrar o próximo alerta
+        }, 8000); // 6s de exibição + 1s de fade-out
+    }
+
+    // Inicia os alertas após 15 segundos
+    setTimeout(() => {
+        showAlert(); // Mostra o primeiro alerta
+    }, 10000); // Espera inicial de 15 segundos antes do primeiro alerta
+
+</script>
