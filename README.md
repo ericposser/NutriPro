@@ -99,5 +99,5 @@
 ## 💌 Contato
 
 📧 Email: **eric_alegrete2002@hotmail.com**
-🌐 LinkedIn: [Seu Perfil](https://linkedin.com/in/seuperfil)
+🌐 LinkedIn: [Meu Perfil](https://www.linkedin.com/in/ericposser/)
 
