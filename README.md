@@ -73,15 +73,12 @@
      }
      ```
 
-4. **Configure o Banco de Dados**:
-   - Atualize a string de conexão no arquivo `appsettings.json`.
-
-5. **Execute o Projeto**:
+4. **Execute o Projeto**:
    ```bash
    dotnet run
    ```
 
-6. **Acesse no Navegador**:
+5. **Acesse no Navegador**:
    - Abra [http://localhost:5000](http://localhost:5000) no seu navegador.
 
 ---
